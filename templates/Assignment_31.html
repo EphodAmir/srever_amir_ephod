@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Assignment_31{% endblock %}
+{% block tohen %}
+{{super()}}
+<span>
+    <h2>Sites and Tours that cost less then 70</h2>
+    {% for site, price in tours_site_price.items() %}
+        {% if price < 70 %}
+            <h3>{{ site | capitalize() }}: {{ price | float() }} </h3>
+    {% endif %}
+
+    {% endfor %}
+</span>
+{% endblock %}

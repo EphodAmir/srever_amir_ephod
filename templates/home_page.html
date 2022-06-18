@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+{% extends 'base.html' %}
+    {% block title %}Home Page{% endblock %}
+{% block tohen %}
+{{super()}}
+    <div id="content">
+            <section id="main_image" onmouseover="blackwhiteImg(this)" onmouseout="colorImg(this)">
+                <img src="..//static/Yaniv.jpeg"  >
+            </section>
+
+            <section id="main_p">
+                <p>My name is Yaniv and I am a licensed tour guide living in Tel Aviv.
+                <br> I love people, nature and traveling, which makes tour guiding my dream job </p>
+            </section>
+
+            <section  id="image_1">
+                <img src="..//static/Yaniv_2.webp" >
+            </section>
+
+                <section id="image_2">
+                    <img src="..//static/yaniv_3.webp">
+                </section>
+                <section id="image_3">
+                    <img src="..//static/building.webp">
+                </section>
+                <section id="image_4">
+                    <img src="..//static/yaniv_4.jpeg">
+                </section>
+
+
+            <section id="tour1_p">
+                <p>Jaffa Port Innovation Center:
+                <br> Renovation & innovation at the
+                world's oldest port. </p>
+            </section>
+            <section id="tour2_p">
+                <p>Plans vs Reality: The White City Tour
+                <br> From the City hall to the beach
+                a Ben-Gurion Blvd. sunset tour. </p>
+            </section>
+            <section id="tour3_p">
+                <p>For more information contact me </p>
+            </section>
+    </div>
+
+{% endblock %}
+
+
+
+

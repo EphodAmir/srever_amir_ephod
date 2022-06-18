@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+    {% block title %}Contact Page{% endblock %}
+{% block tohen %}
+{{super()}}
+    <div >
+        <h3 id="h3">Contact Us</h3>
+    </div>
+    <span>
+        <form id="form"  action="url" method="post">
+            <label for="first name">first name :</label>
+            <input style="margin:  5px;" type="text" id = "first name" name = "first name" required><br>
+            <label >last name :</label>
+            <input style="margin:  5px;" type="text" id = "full name" name = "last name" required><br>
+            <label for="email">Email :</label>
+            <input style="margin:  5px;" type="email" id = "email" name = "email"><br>
+            <label for="free text">Free text :</label> <br>
+            <input style="margin: 5px; width: 6cm ;height: 3cm;" type="text" id = "free text" name = "free text"><br>
+            <label for="email">It is your first time ? :</label>
+            <input style="margin:  5px;" type="checkbox" id="scales" name="scales" checked>
+            <label style="margin:  5px;" for="scales">Yes</label><br>
 
-</body>
-</html>
+        </form>
+        <button id="button" onclick="submit(this)">Submit</button>
+    </span>
+{% endblock %}
