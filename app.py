@@ -13,6 +13,7 @@ def home():
     return render_template('home_page.html')
 
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
@@ -44,11 +45,11 @@ def Assignment_32():
                     session['logedin'] = True
                     return render_template('Assignment_32.html', massage_exist="User already exist, you signed in")
                 else:
-                    return render_template('Assignment_32.html', massage_exist="Wrong email")
+                    return render_template('Assignment_32.html', massage_error="Wrong email")
         users.update({list(users.keys())[-1]+1: {"name": user_name_reg, "email": email_reg}})
         session['username'] = user_name_reg
         session['logedin'] = True
-        return render_template('Assignment_32.html', massage_new="New user added")
+        return redirect('/home_page')
     elif 'uname' in request.args:
         user_name = request.args['uname'].capitalize()
         for user in users:
@@ -56,6 +57,8 @@ def Assignment_32():
                 return render_template('Assignment_32.html',name=users[user]["name"],email=users[user]['email'])
             if user_name == "":
                 return render_template('Assignment_32.html', users=users)
+        print("aaa")
+        return render_template('Assignment_32.html',massage_exist="User not found")
     else:
         return render_template('Assignment_32.html')
 
