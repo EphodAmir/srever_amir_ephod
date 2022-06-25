@@ -1,0 +1,75 @@
+{% extends 'Base.html' %}
+{% block title %}Assignment4{% endblock %}
+{% block tohen %}
+{{super()}}
+  <h1>Users Page</h1>
+
+    <div class="container">
+    <h3>Insert</h3>
+        <form action="/insert_user" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="submit" onclick="message_to_user()">
+        </form>
+    </div>
+
+    <div class="container">
+        <h3>Delete</h3>
+        <form action="/delete_user" method="post">
+            <input type="text" name="user_id" placeholder="ID" required>
+            <input type="submit" value="Delete"  onclick="message_to_user()">
+        </form>
+    </div>
+    <div class="container">
+        <h3>Update</h3>
+        <form action="/update_user" method="post">
+            <input type="hidden" name="user_id" >
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="submit" value="Update" onclick="message_to_user()">
+        </form>
+    </div>
+    <div class="container">
+        <h3>Json</h3>
+        <form action="/assignment4/users" >
+            <input type="submit" value="Create Json" >
+        </form>
+    </div>
+    <div>
+        <h4>Fetch - FrontEnd</h4>
+         <form >
+                <input id="ID" type="text" name="page" placeholder="User ID" required>
+                <input type="submit" value="Extract user" onclick="fetch_func();return false;">
+         </form>
+        <div id="user_container">
+
+        </div>
+            <h4>import - BackEnd </h4>
+         <form  action="/assignment4/Backend">
+                <input type="text" name="user_id" placeholder="User ID" required>
+                <input type="submit" value="Extract user" >
+         </form>
+        <div id="user_container_2">
+            {% if users_BE %}
+                <h4>{{users_BE.data.first_name}} {{users_BE.data.last_name}} </h4>
+                <h4>{{users_BE.data.email}}</h4>
+                <img class = "img_fetch" src="{{users_BE.data.avatar}}" alt=""> </img>
+            {% endif %}
+        </div>
+    </div>
+    <div >
+        <h4>Part - C</h4>
+        <form  action="/assignment4/restapi_users">
+                <input type="text" name="user_id" placeholder="User ID" >
+                <input type="submit" value="Extract user" >
+        </form>
+    </div>
+    {% if users %}
+            {% for user in users %}
+                <div class="users">
+                    <h4> {{ user['id'] }}</h4>
+                    <h5>Name: {{ user.name  }} <br> Email : {{user.email}}</h5>
+                </div>
+            {% endfor %}
+    {% endif %}
+{% endblock %}

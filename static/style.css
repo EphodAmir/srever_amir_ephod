@@ -53,6 +53,9 @@ h3{
 h2{
     text-align: center;
 }
+h4{
+    padding: 10px;
+}
 
 
 /* homepage */
@@ -158,6 +161,28 @@ display: table-cell;
 #search{
 float:right;
 width: 50%;
+}
+
+.container{
+    padding: 4px;
+    display: inline-block;
+    border: black 2px;
+    border-style: double;
+}
+.users{
+    display: flex;
+}
+#user_container{
+    width:250px; /* or whatever width you want. */
+   max-width:250px; /* or whatever width you want. */
+   display: inline-block;
+    padding: 10px;
+}
+#user_container_2{
+    width:250px; /* or whatever width you want. */
+   max-width:250px; /* or whatever width you want. */
+   display: inline-block;
+    padding: 10px;
 }
 .log_out {
     float: left;

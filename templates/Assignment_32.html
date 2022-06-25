@@ -10,13 +10,7 @@
   <input type="submit" value="Find Users"><br><br>
 </form>
 
-{% if users %}
-    <ol>
-        {% for k, v in users.items() %}
-            <li><h4>Name: {{ v.name  }} <br> Email : {{v.email}}</h4></li>
-        {% endfor %}
-    </ol>
-{% endif %}
+
 {% if name  %}
     <h4>Name: {{name}} </h4>
     <h4>Email: {{email}} </h4>
@@ -26,7 +20,7 @@
     <a class = "log_out" href="/log_out">Log out</a>
 
     {% if massage_exist %}
-        <h3 style="color: red">{{massage_exist}}</h3>
+        <h3 >{{massage_exist}}</h3>
     {% endif %}
 
 {% else %}
@@ -42,7 +36,7 @@
         </form>
     </span>
     {% if massage_error %}
-        <h3 style="color: red">{{massage_error}}</h3>
+        <h3>{{massage_error}}</h3>
     {% endif %}
 {% endif %}
 {% endblock %}

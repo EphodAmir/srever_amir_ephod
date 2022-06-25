@@ -41,5 +41,26 @@ function blackwhiteImg(x) {
 
 function colorImg(x) {
   x.style.filter= "grayscale(0%)";
-
 }
+
+function fetch_func() {
+        const id = document.getElementById("ID").value;
+        const url = `https://reqres.in/api/users/${id}`
+        fetch(url)
+            .then(response => response.json())
+            .then(value => {
+                document.getElementById('user_container').innerHTML = `
+            <h3>${value.data["first_name"]} ${value.data["last_name"]}</h3>
+            <p>${value.data["email"]}"</p>
+            <img src="${value.data["avatar"]}" alt="avatar"/>
+            `
+            })
+
+    }
+
+  function message_to_user() {
+
+  alert("DB changed successfully");
+
+  }
+
